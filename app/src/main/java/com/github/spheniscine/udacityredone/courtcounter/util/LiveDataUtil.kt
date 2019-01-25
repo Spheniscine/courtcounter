@@ -7,11 +7,11 @@ import androidx.lifecycle.Observer
 import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
 
-inline fun <reified T> MutableLiveData<T>.delegate() = object : ReadWriteProperty<Any?, T> {
-    override fun getValue(thisRef: Any?, property: KProperty<*>): T =
+fun <T> MutableLiveData<T>.delegate() = object : ReadWriteProperty<Any, T> {
+    override fun getValue(thisRef: Any, property: KProperty<*>): T =
         this@delegate.value as T
 
-    override fun setValue(thisRef: Any?, property: KProperty<*>, value: T) {
+    override fun setValue(thisRef: Any, property: KProperty<*>, value: T) {
         this@delegate setIfNot value
     }
 }
