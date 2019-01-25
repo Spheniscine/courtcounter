@@ -1,7 +1,10 @@
 package com.github.spheniscine.udacityredone.courtcounter.ui
 
 import android.os.Bundle
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.ViewDataBinding
 import com.github.spheniscine.udacityredone.courtcounter.R
+import com.github.spheniscine.udacityredone.courtcounter.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
@@ -12,6 +15,8 @@ class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main).setLifecycleOwner(this)
 
 //        bindText(team_a_score, vm.scoreTeamA_ld)
 //        bindText(team_b_score, vm.scoreTeamB_ld)
