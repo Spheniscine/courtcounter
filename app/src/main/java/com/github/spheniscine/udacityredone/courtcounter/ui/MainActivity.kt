@@ -7,14 +7,14 @@ import org.koin.android.viewmodel.ext.android.viewModel
 
 class MainActivity : BaseActivity() {
 
-    private val vm: MainViewModel by viewModel()
+    val vm: MainViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        bindText(team_a_score, vm.scoreTeamA_ld)
-        bindText(team_b_score, vm.scoreTeamB_ld)
+//        bindText(team_a_score, vm.scoreTeamA_ld)
+//        bindText(team_b_score, vm.scoreTeamB_ld)
         
         bindClick(addOneForTeamA, vm::addOneForTeamA)
         bindClick(addTwoForTeamA, vm::addTwoForTeamA)
