@@ -2,6 +2,7 @@ package com.github.spheniscine.udacityredone.courtcounter
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import androidx.test.internal.runner.junit4.statement.UiThreadStatement.runOnUiThread
 import androidx.test.rule.ActivityTestRule
 import com.github.spheniscine.udacityredone.courtcounter.ui.MainActivity
 import com.github.spheniscine.udacityredone.courtcounter.ui.MainViewModel
@@ -43,7 +44,7 @@ class MainActivityTest {
 
     @Test
     fun scoreTeamA_changes_whenViewModelSet() {
-        mockVm.scoreTeamA_ld setTo 55
+        runOnUiThread { mockVm.scoreTeamA_ld setTo 55 }
         assertDisplayed(R.id.team_a_score, "55")
 
     }
