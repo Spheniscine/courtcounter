@@ -14,7 +14,7 @@ abstract class BaseActivity : AppCompatActivity(), ActivityOrFragment {
     override val app get() = application as App
     override val root by lazy { findViewById<View>(android.R.id.content)!! }
 
-    protected inline fun <reified T : ViewDataBinding> dataBind(@LayoutRes layoutRes: Int): T {
+    protected fun <T : ViewDataBinding> dataBind(@LayoutRes layoutRes: Int): T {
         val binding: T = DataBindingUtil.setContentView(this, layoutRes)
         binding.setLifecycleOwner(this)
         return binding
