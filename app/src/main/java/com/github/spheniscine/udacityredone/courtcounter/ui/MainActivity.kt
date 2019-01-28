@@ -23,13 +23,13 @@ class MainActivity : BaseActivity() {
 //        bindText(team_a_score, vm.scoreTeamA_ld)
 //        bindText(team_b_score, vm.scoreTeamB_ld)
         
-        bindClick(addOneForTeamA, vm::addOneForTeamA)
-        bindClick(addTwoForTeamA, vm::addTwoForTeamA)
-        bindClick(addThreeForTeamA, vm::addThreeForTeamA)
+//        bindClick(addOneForTeamA, vm::addOneForTeamA)
+//        bindClick(addTwoForTeamA, vm::addTwoForTeamA)
+//        bindClick(addThreeForTeamA, vm::addThreeForTeamA)
 
-        bindClick(addOneForTeamB, vm::addOneForTeamB)
-        bindClick(addTwoForTeamB, vm::addTwoForTeamB)
-        bindClick(addThreeForTeamB, vm::addThreeForTeamB)
+//        bindClick(addOneForTeamB, vm::addOneForTeamB)
+//        bindClick(addTwoForTeamB, vm::addTwoForTeamB)
+//        bindClick(addThreeForTeamB, vm::addThreeForTeamB)
 //
 //        bindClick(resetScore, vm::resetScore)
     }
