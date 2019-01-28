@@ -14,9 +14,11 @@ class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //setContentView(R.layout.activity_main)
+//        setContentView(R.layout.activity_main)
 
-        DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main).setLifecycleOwner(this)
+        val binding: ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding.vm = vm
+        binding.setLifecycleOwner(this)
 
 //        bindText(team_a_score, vm.scoreTeamA_ld)
 //        bindText(team_b_score, vm.scoreTeamB_ld)
@@ -28,7 +30,7 @@ class MainActivity : BaseActivity() {
         bindClick(addOneForTeamB, vm::addOneForTeamB)
         bindClick(addTwoForTeamB, vm::addTwoForTeamB)
         bindClick(addThreeForTeamB, vm::addThreeForTeamB)
-
-        bindClick(resetScore, vm::resetScore)
+//
+//        bindClick(resetScore, vm::resetScore)
     }
 }
