@@ -1,11 +1,8 @@
 package com.github.spheniscine.udacityredone.courtcounter.ui
 
 import android.os.Bundle
-import androidx.databinding.DataBindingUtil
-import androidx.databinding.ViewDataBinding
 import com.github.spheniscine.udacityredone.courtcounter.R
 import com.github.spheniscine.udacityredone.courtcounter.databinding.ActivityMainBinding
-import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class MainActivity : BaseActivity() {
@@ -16,8 +13,7 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
 //        setContentView(R.layout.activity_main)
 
-        val binding: ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        binding.setLifecycleOwner(this)
+        val binding: ActivityMainBinding = dataBind(R.layout.activity_main)
         binding.vm = vm
 
 //        bindText(team_a_score, vm.scoreTeamA_ld)
