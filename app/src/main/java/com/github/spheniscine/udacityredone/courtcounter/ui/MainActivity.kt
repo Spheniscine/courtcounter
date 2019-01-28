@@ -10,15 +10,15 @@ import org.koin.android.viewmodel.ext.android.viewModel
 
 class MainActivity : BaseActivity() {
 
-    val vm: MainViewModel by viewModel()
+    private val vm: MainViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 //        setContentView(R.layout.activity_main)
 
         val binding: ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        binding.vm = vm
         binding.setLifecycleOwner(this)
+        binding.vm = vm
 
 //        bindText(team_a_score, vm.scoreTeamA_ld)
 //        bindText(team_b_score, vm.scoreTeamB_ld)
